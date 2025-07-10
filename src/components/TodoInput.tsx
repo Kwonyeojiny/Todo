@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const TodoInput = () => {
   const [inputValue, setInputValue] = useState<string>("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newInputValue = e.target.value;
     setInputValue(e.target.value);
-    console.log(newInputValue);
   };
+
+  useEffect(() => {
+    console.log("변경된 값: ", inputValue);
+  }, [inputValue]);
 
   return <input type="text" value={inputValue} onChange={handleChange} />;
 };
