@@ -8,7 +8,7 @@ const Todo = () => {
   const [todos, setTodos] = useState<TodoInputProps[]>(todoList);
 
   return (
-    <div className="flex flex-col justify-center items-center gap-4">
+    <div className="flex flex-col justify-start items-center gap-4">
       <TodoInput todos={todos} setTodos={setTodos} />
       <TodoList todos={todos} setTodos={setTodos} />
     </div>

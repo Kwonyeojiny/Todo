@@ -1,5 +1,5 @@
 export interface TodoInputProps {
-  id: number;
+  id: string;
   todo: string;
   isComplete: boolean;
 }

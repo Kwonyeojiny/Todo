@@ -1,7 +1,7 @@
 import type { TodoListProps } from "../types/todo";
 
 const TodoList = ({ todos, setTodos }: TodoListProps) => {
-  const handleCheckboxChange = (id: number) => {
+  const handleCheckboxChange = (id: string) => {
     const updatedTodos = todos.map((todo) =>
       todo.id === id ? { ...todo, isComplete: !todo.isComplete } : todo
     );

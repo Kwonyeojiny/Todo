@@ -10,9 +10,11 @@ const TodoInput = ({ todos, setTodos }: TodoListProps) => {
 
   const handleAddTodo = () => {
     const newArr = [...todos];
-
+    const generatedId = () => {
+      return `${Date.now()}_${Math.floor(Math.random() * 10000)}`;
+    };
     newArr.push({
-      id: newArr.length,
+      id: generatedId(),
       todo: inputValue,
       isComplete: false,
     });
