@@ -14,9 +14,9 @@ const TodoList = () => {
   };
 
   return (
-    <>
+    <div className="flex flex-col gap-2">
       {todos.map((todo) => (
-        <div key={todo.id}>
+        <div key={todo.id} className="flex gap-4">
           <input
             type="checkbox"
             checked={todo.isComplete}
@@ -25,7 +25,7 @@ const TodoList = () => {
           <span>{todo.todo}</span>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 
