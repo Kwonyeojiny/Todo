@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import type { TodoInputProps } from "../types/todo";
-import { todoList } from "../mock/todoList";
+import type { TodoListProps } from "../types/todo";
 
-const TodoInput = () => {
+const TodoInput = ({ todos, setTodos }: TodoListProps) => {
   const [inputValue, setInputValue] = useState<string>("");
-  const [todos, setTodos] = useState<TodoInputProps[]>(todoList);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);

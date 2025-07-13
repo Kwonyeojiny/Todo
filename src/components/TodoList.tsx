@@ -1,10 +1,6 @@
-import { useState } from "react";
-import { todoList } from "../mock/todoList";
-import type { TodoInputProps } from "../types/todo";
+import type { TodoListProps } from "../types/todo";
 
-const TodoList = () => {
-  const [todos, setTodos] = useState<TodoInputProps[]>(todoList);
-
+const TodoList = ({ todos, setTodos }: TodoListProps) => {
   const handleCheckboxChange = (id: number) => {
     const updatedTodos = todos.map((todo) =>
       todo.id === id ? { ...todo, isComplete: !todo.isComplete } : todo
