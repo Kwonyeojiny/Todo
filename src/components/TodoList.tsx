@@ -9,6 +9,11 @@ const TodoList = ({ todos, setTodos }: TodoListProps) => {
     console.log("투두 업데이트: ", updatedTodos);
   };
 
+  const handleDeleteTodo = (id: string) => {
+    const deletedTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(deletedTodos);
+  };
+
   return (
     <div className="flex flex-col gap-2">
       {todos.map((todo) => (
@@ -19,6 +24,9 @@ const TodoList = ({ todos, setTodos }: TodoListProps) => {
             onChange={() => handleCheckboxChange(todo.id)}
           />
           <span>{todo.todo}</span>
+          <div className="flex gap-1">
+            <button onClick={() => handleDeleteTodo(todo.id)}>❎</button>
+          </div>
         </div>
       ))}
     </div>
