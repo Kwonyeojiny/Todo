@@ -1,10 +1,5 @@
 import { useEffect, useState } from "react";
-
-interface TodoInputProps {
-  id: number;
-  todo: string;
-  isComplete: boolean;
-}
+import type { TodoInputProps } from "../types/todo";
 
 const TodoInput = () => {
   const [inputValue, setInputValue] = useState<string>("");
